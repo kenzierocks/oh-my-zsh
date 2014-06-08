@@ -48,9 +48,9 @@ local git_branch='$(git_prompt)%{$PR_NO_COLOR%}'
 local p_time="%{$PR_BOLD%}%D{%L:%M%p}%{$PR_NO_COLOR%}"
 
 PS1="
-%{$PR_BLUE%}╭─<${user_host}%{$PR_BLUE%}>-<${current_dir}%{$PR_BLUE%}>-${git_branch}%{$PR_BLUE%}<${p_time}%{$PR_BLUE%}>-◇
+%{$PR_BLUE%}╭─<${user_host}%{$PR_BLUE%}>-<${current_dir}%{$PR_BLUE%}>-${git_branch}%{$PR_BLUE%}<${p_time}%{$PR_BLUE%}>-<$(battery_level_gauge)%{$PR_BLUE%}>
 %{$PR_BLUE%}╰─$PR_PROMPT"
-RPS1="${return_code}$(battery_level_gauge)"
+RPS1="${return_code}"
 
 local GIT_PRE="<%{$PR_BOLD%}"
 local GIT_POST="%{$PR_NO_COLOR$PR_BLUE%}>-"
