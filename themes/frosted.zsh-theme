@@ -47,8 +47,11 @@ local git_branch='$(git_prompt)%{$PR_NO_COLOR%}'
 # The time
 local p_time="%{$PR_BOLD%}%D{%L:%M%p}%{$PR_NO_COLOR%}"
 
+local battery='$(battery_level_gauge)'
+
 PS1="
-%{$PR_BLUE%}╭─<${user_host}%{$PR_BLUE%}>-<${current_dir}%{$PR_BLUE%}>-${git_branch}%{$PR_BLUE%}<${p_time}%{$PR_BLUE%}>-<$(battery_level_gauge)%{$PR_BLUE%}>
+%{$PR_BLUE%}╭─<${user_host}%{$PR_BLUE%}>-<${current_dir}%{$PR_BLUE%}>-${git_branch}%{$PR_BLUE%}<${p_time}%{$PR_BLUE%}>
+%{$PR_BLUE%}[<${battery}%{$PR_BLUE%}>
 %{$PR_BLUE%}╰─$PR_PROMPT"
 RPS1="${return_code}"
 
