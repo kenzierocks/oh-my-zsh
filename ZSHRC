@@ -116,5 +116,4 @@ ponysay -qVinyl -qVinyliPhone -qVinylDishwasher -qVinylCannon
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 alias path="echo $PATH"
 alias reload="source ~/.zshrc"
-alias ponysay_build="pushd /Users/kenzietogami/Documents/GitHUb/ponysay/ && echo 1984 | sudo ./setup.py install --with-everything --freedom=partial && popd"
 export JDK6_RT="/Library/Java/Home/lib/rt.jar"
