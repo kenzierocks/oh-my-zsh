@@ -60,11 +60,12 @@ source $ZSH/oh-my-zsh.sh
 
 export PATH=/Developer/NVIDIA/CUDA-5.5/bin:$PATH
 # export DYLD_LIBRARY_PATH=/Developer/NVIDIA/CUDA-5.5/lib:$DYLD_LIBRARY_PATH
-export PATH=/usr/local/bin:$PATH
+export PATH=$HOME/.local/bin:/usr/local/bin:$PATH
 
 # add the terminal extras I have
 export PATH=/Users/kenzietogami/Documents/terminal_extra:$PATH
-
+# MacOSX cd special
+if [[ "$(uname)" == "Darwin" ]]; then
 function cd {
   if [ ${#1} = 0 ]; then
     builtin cd
@@ -77,6 +78,7 @@ function cd {
     builtin cd "${1}"
   fi
 }
+fi
 
 function edit {
    vim "{1}"
