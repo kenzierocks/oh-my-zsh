@@ -78,6 +78,7 @@ function cd {
     builtin cd "${1}"
   fi
 }
+AICCU_DIR=/usr/local/Cellar/aiccu
 fi
 
 function edit {
