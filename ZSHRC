@@ -119,4 +119,4 @@ ponysay -qVinyl -qVinyliPhone -qVinylDishwasher -qVinylCannon
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 alias path="echo $PATH"
 alias reload="src"
-export JDK6_RT="/Library/Java/Home/lib/rt.jar"
+alias sl='sl -e'
