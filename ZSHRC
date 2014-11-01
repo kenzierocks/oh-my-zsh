@@ -114,7 +114,7 @@ function createtext {
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
-ponysay -qVinyl -qVinyliPhone -qVinylDishwasher -qVinylCannon | ponysay -foctavia
+ponysay -qVinyl -qVinyliPhone -qVinylDishwasher -qVinylCannon | ponythink -foctavia
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 alias path="echo $PATH"
