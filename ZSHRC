@@ -114,6 +114,19 @@ function createtext {
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
+export VISUAL="vim"
+export EDITOR=$VISUAL
+
+function noexe {
+    if [[ ${1} == *.exe ]] ;
+    then
+            echo "${1} has stopped working."
+    fi
+}
+
+autoload -U add-zsh-hook
+add-zsh-hook preexec noexe
+
 ponysay -qVinyl -qVinyliPhone -qVinylDishwasher -qVinylCannon | ponythink -foctavia
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
