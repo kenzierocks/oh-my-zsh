@@ -133,3 +133,4 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 alias path="echo $PATH"
 alias reload="src"
 alias sl='sl -e'
+export PATH="/usr/local/sbin:$PATH"
