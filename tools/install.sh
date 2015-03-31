@@ -60,8 +60,10 @@ main() {
     exit 1
   }
 
+pushd $ZSH
 echo "\033[0;34mAttaching fetch-origin...\033[0m"
 env git remote add fetch-origin https://github.com/robbyrussell/oh-my-zsh.git
+popd
 
 >>>>>>> Okie dokie, got my own install setup
   # The Windows (MSYS) Git is not compatible with normal use on cygwin
