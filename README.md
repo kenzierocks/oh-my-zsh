@@ -32,13 +32,13 @@ Oh My Zsh is installed by running one of the following commands in your terminal
 #### via curl
 
 ```shell
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/kenzierocks/oh-my-zsh/master/tools/install.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/kenzierocks/oh-my-zsh/master/tools/install.sh)"
 ```
 
 #### via wget
 
 ```shell
-sh -c "$(wget https://raw.githubusercontent.com/kenzierocks/oh-my-zsh/master/tools/install.sh -O -)"
+bash -c "$(wget https://raw.githubusercontent.com/kenzierocks/oh-my-zsh/master/tools/install.sh -O -)"
 ```
 
 ## Using Oh My Zsh
@@ -112,7 +112,7 @@ The default location is `~/.oh-my-zsh` (hidden in your home directory)
 If you'd like to change the install directory with the `ZSH` environment variable, either by running `export ZSH=/your/path` before installing, or by setting it before the end of the install pipeline like this:
 
 ```shell
-export ZSH="$HOME/.dotfiles/oh-my-zsh"; sh -c "$(curl -fsSL https://raw.githubusercontent.com/kenzierocks/oh-my-zsh/master/tools/install.sh)"
+export ZSH="$HOME/.dotfiles/oh-my-zsh"; bash -c "$(curl -fsSL https://raw.githubusercontent.com/kenzierocks/oh-my-zsh/master/tools/install.sh)"
 ```
 
 #### Manual Installation
