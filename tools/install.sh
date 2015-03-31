@@ -53,6 +53,17 @@ main() {
     echo "Error: git is not installed"
     exit 1
   }
+<<<<<<< e698012ade93f4713ec8dbbc22fe3f8bf84cdc2b
+=======
+  env git clone --depth=1 https://github.com/robbyrussell/oh-my-zsh.git $ZSH || {
+    printf "Error: git clone of oh-my-zsh repo failed\n"
+    exit 1
+  }
+
+echo "\033[0;34mAttaching fetch-origin...\033[0m"
+env git remote add fetch-origin https://github.com/robbyrussell/oh-my-zsh.git
+
+>>>>>>> Okie dokie, got my own install setup
   # The Windows (MSYS) Git is not compatible with normal use on cygwin
   if [ "$OSTYPE" = cygwin ]; then
     if git --version | grep msysgit > /dev/null; then
