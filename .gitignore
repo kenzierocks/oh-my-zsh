@@ -5,4 +5,5 @@ custom/
 
 # temp files directories
 cache/
-log/
+completions/
+
