@@ -88,7 +88,7 @@ function edit {
 if hascom gedit ; then
 else
   function gedit {
-    open -a "/Users/kenzietogami/Applications/Sublime Text 2.app" "${1}"
+    open -a "Sublime Text 2" "$@"
   }
 fi
 
