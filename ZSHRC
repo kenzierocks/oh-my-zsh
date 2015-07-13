@@ -139,5 +139,5 @@ function pipit {
 }
 export PATH="/usr/local/sbin:$PATH"
 alias brewupd8upgrade='brew update && brew upgrade --all'
-export fpath=$fpath:/usr/local/share/zsh/site-functions
+fpath=($fpath /usr/local/share/zsh/site-functions)
 
