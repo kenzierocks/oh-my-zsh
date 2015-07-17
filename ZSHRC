@@ -140,4 +140,6 @@ function pipit {
 export PATH="/usr/local/sbin:$PATH"
 alias brewupd8upgrade='brew update && brew upgrade --all'
 fpath=($fpath /usr/local/share/zsh/site-functions)
+alias fuck='eval $(thefuck $(fc -ln -1 | tail -n 1)); fc -R'
+alias grep-ps='grep -v grep | grep'
 
