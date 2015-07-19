@@ -125,9 +125,8 @@ function noexe {
 }
 
 autoload -U add-zsh-hook
-add-zsh-hook preexec noexe
+#add-zsh-hook preexec noexe
 
-ponysay -qVinyl -qVinyliPhone -qVinylDishwasher -qVinylCannon -b unicode | ponythink -foctavia -b unicode
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 alias path="echo $PATH"
@@ -142,4 +141,6 @@ alias brewupd8upgrade='brew update && brew upgrade --all'
 fpath=($fpath /usr/local/share/zsh/site-functions)
 alias fuck='eval $(thefuck $(fc -ln -1 | tail -n 1)); fc -R'
 alias grep-ps='grep -v grep | grep'
+
+ponysay -qVinyl -qVinyliPhone -qVinylDishwasher -qVinylCannon -b unicode | ponythink -foctavia -b unicode
 
