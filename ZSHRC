@@ -142,5 +142,10 @@ fpath=($fpath /usr/local/share/zsh/site-functions)
 alias fuck='eval $(thefuck $(fc -ln -1 | tail -n 1)); fc -R'
 alias grep-ps='grep -v grep | grep'
 
+# updating prompt cleanly
+TMOUT=1
+TRAPALRM() {
+    zle reset-prompt
+}
 ponysay -qVinyl -qVinyliPhone -qVinylDishwasher -qVinylCannon -b unicode | ponythink -foctavia -b unicode
 
