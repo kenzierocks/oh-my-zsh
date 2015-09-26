@@ -37,12 +37,21 @@ local current_dir='%{$PR_BOLD$PR_BLUE%}${PWD/#$HOME/~}%{$PR_NO_COLOR%}'
 function git_prompt {
 	gp="$(git_prompt_short_sha)$(git_prompt_info)$(git_prompt_ahead)"
 	if [ "x$gp" != "x" ]; then
-		echo "${GIT_PRE}${gp}${GIT_POST}"
+		echo "${GIT_PRE}${gp}${GIT_POST}-"
 	else
 		echo ""
 	fi
 }
+function venv {
+    venv="$VIRTUAL_ENV"
+    if [ "x$venv" != "x"  ] && [ "${PWD:0:${#venv}}" = "$venv" ]; then
+        echo "-${GIT_PRE}$(basename $PWD)${GIT_POST}"
+    else
+        echo ""
+    fi
+}
 local git_branch='$(git_prompt)%{$PR_NO_COLOR%}'
+local venv='$(venv)%{$PR_NO_COLOR%}'
 
 # The time
 local p_time="%{$PR_BOLD%}%D{%L:%M:%S%p}%{$PR_NO_COLOR%}"
@@ -50,13 +59,13 @@ local p_time="%{$PR_BOLD%}%D{%L:%M:%S%p}%{$PR_NO_COLOR%}"
 local battery='$(battery_level_gauge)'
 
 PS1="
-%{$PR_BLUE%}╭─<${user_host}%{$PR_BLUE%}>-<${current_dir}%{$PR_BLUE%}>-${git_branch}%{$PR_BLUE%}<${p_time}%{$PR_BLUE%}>
+%{$PR_BLUE%}╭─<${user_host}%{$PR_BLUE%}>-<${current_dir}%{$PR_BLUE%}>-${git_branch}%{$PR_BLUE%}<${p_time}%{$PR_BLUE%}>${venv}
 %{$PR_BLUE%}|<${battery}%{$PR_BLUE%}>
 %{$PR_BLUE%}╰─$PR_PROMPT"
 RPS1="${return_code}"
 
 local GIT_PRE="<%{$PR_BOLD%}"
-local GIT_POST="%{$PR_NO_COLOR$PR_BLUE%}>-"
+local GIT_POST="%{$PR_NO_COLOR$PR_BLUE%}>"
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$PR_NO_COLOR$PR_BLUE%}∙%{$PR_BOLD%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX=""
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$PR_NO_COLOR$PR_BLUE%}∙%{$PR_RED%}✗"
