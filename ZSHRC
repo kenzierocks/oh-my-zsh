@@ -150,6 +150,5 @@ TRAPALRM() {
 ponysay -qVinyl -qVinyliPhone -qVinylDishwasher -qVinylCannon -b unicode | ponythink -foctavia -b unicode
 
 alias youtube-dl-mp3='youtube-dl --extract-audio --audio-format mp3'
-
 alias entervenv='source bin/activate'
-
+alias mksrcdirs='mkdir -p src/{main,test}/{java,resources}''
