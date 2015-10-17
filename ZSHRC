@@ -118,9 +118,8 @@ export VISUAL="vim"
 export EDITOR=$VISUAL
 
 function noexe {
-    if [[ ${1} == *.exe ]] ;
-    then
-            echo "${1} has stopped working."
+    if [[ ${1} == *.exe ]] ; then
+        echo "${1} has stopped working."
     fi
 }
 
@@ -132,12 +131,24 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 alias path="echo $PATH"
 alias reload="src"
 alias sl='sl -e'
-function pipit {
-    pip "$@"
-    pip3 "$@"
-}
+if hascom pip && pip --version | grep "python 2">/dev/null ; then
+    function pipit {
+        pip "$@"
+        pip3 "$@"
+    }
+elif hascom pip2 ; then
+    function pipit {
+        pip2 "$@"
+        pip3 "$@"
+    }
+else
+    echo 'No python 2 pip found'
+    function pipit {
+        echo 'No python 2 pip'
+    }
+fi
 export PATH="/usr/local/sbin:$PATH"
-alias brewupd8upgrade='brew update && brew upgrade --all'
+alias brewupd8upgrade='brew update --verbose && brew upgrade --all --verbose'
 fpath=($fpath /usr/local/share/zsh/site-functions)
 alias fuck='eval $(thefuck $(fc -ln -1 | tail -n 1)); fc -R'
 alias grep-ps='grep -v grep | grep'
