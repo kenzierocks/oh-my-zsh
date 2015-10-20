@@ -22,7 +22,17 @@ fi
 
 printf "${BLUE}%s${NORMAL}\n" "Updating Oh My Zsh"
 cd "$ZSH"
-if git pull --ff-only origin master && git fetch fetch-origin master && git merge fetch-origin/master  && git push
+originok=0
+if git pull --ff-only origin master; then
+    originok=1
+    echo "Successful pull."
+fi
+mergeok=0
+if git fetch fetch-origin master && git merge fetch-origin/master && git push; then
+    mergeok=1
+    echo "Successful merge."
+fi
+if [ $originok -eq 0 ] || [ $mergeok -eq 0 ]
 then
   printf '%s' "$GREEN"
   printf '%s\n' '         __                                     __   '
