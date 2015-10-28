@@ -32,7 +32,7 @@ if git fetch fetch-origin master && git merge fetch-origin/master && git push; t
     mergeok=1
     echo "Successful merge."
 fi
-if [ $originok -eq 0 ] || [ $mergeok -eq 0 ]
+if [ $originok -eq 1 ] || [ $mergeok -eq 1 ]
 then
   printf '%s' "$GREEN"
   printf '%s\n' '         __                                     __   '
