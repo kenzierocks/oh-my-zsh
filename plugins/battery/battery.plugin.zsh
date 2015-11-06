@@ -12,8 +12,9 @@ if [[ "$(acpi 2>&1)" = *"No support for device type: power_supply"* ]]; then
     function battery_level_gauge() {
         printf "No battery."
     }
-    exit
-fi
+else
+
+# stuff...
 if [[ "$OSTYPE" = darwin* ]] ; then
 
   function battery_pct() {
@@ -162,5 +163,5 @@ function battery_level_gauge() {
   [[ $filled -lt $gauge_slots ]] && printf ${empty_symbol//\%/\%\%}'%.0s' {1..$empty}
   printf ${color_reset//\%/\%\%}${battery_suffix//\%/\%\%}${color_reset//\%/\%\%}
 }
-
+fi
 
