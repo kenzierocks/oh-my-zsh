@@ -7,7 +7,13 @@
 # Email: neuralsandwich@gmail.com         #
 # Modified to add support for Apple Mac   #
 ###########################################
-
+if [[ "$(acpi 2>&1)" = *"No support for device type: power_supply"* ]]; then
+    # just forget the whole thing....
+    function battery_level_gauge() {
+        printf "No battery."
+    }
+    exit
+fi
 if [[ "$OSTYPE" = darwin* ]] ; then
 
   function battery_pct() {
