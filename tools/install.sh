@@ -53,9 +53,8 @@ main() {
     echo "Error: git is not installed"
     exit 1
   }
-<<<<<<< e698012ade93f4713ec8dbbc22fe3f8bf84cdc2b
+  env git clone --depth=1 https://github.com/kenzierocks/oh-my-zsh.git $ZSH || {
 =======
-  env git clone --depth=1 https://github.com/robbyrussell/oh-my-zsh.git $ZSH || {
     printf "Error: git clone of oh-my-zsh repo failed\n"
     exit 1
   }
