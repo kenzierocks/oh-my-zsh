@@ -28,9 +28,9 @@ if git pull --ff-only origin master; then
     echo "Successful pull."
 fi
 mergeok=0
-if git fetch fetch-origin master && git merge fetch-origin/master && git push; then
+if git fetch fetch-origin master && git rebase fetch-origin/master && git push; then
     mergeok=1
-    echo "Successful merge."
+    echo "Successful rebase."
 fi
 if [ $originok -eq 1 ] || [ $mergeok -eq 1 ]
 then
