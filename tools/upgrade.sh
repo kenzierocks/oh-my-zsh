@@ -23,14 +23,18 @@ fi
 printf "${BLUE}%s${NORMAL}\n" "Updating Oh My Zsh"
 cd "$ZSH"
 originok=0
-if git fetch origin && git reset --hard origin/master; then
+mergeok=0
+if [[ -n $(git status --porcelain) ]]; then
+  echo "ERROR: dirty git state. Doing nothing!"
+else
+  if git fetch origin && git reset --hard origin/master; then
     originok=1
     echo "Successful pull."
-fi
-mergeok=0
-if git fetch fetch-origin master && git rebase fetch-origin/master && git push --force; then
+  fi
+  if git fetch fetch-origin master && git rebase fetch-origin/master && git push --force; then
     mergeok=1
     echo "Successful rebase."
+  fi
 fi
 if [ $originok -eq 1 ] || [ $mergeok -eq 1 ]
 then
