@@ -82,7 +82,7 @@ AICCU_DIR=/usr/local/Cellar/aiccu/20070115/sbin
 fi
 
 function edit {
-   vim "{1}"
+   vim "$@"
 }
 
 if hascom gedit ; then
