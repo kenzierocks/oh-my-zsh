@@ -23,7 +23,7 @@ fi
 printf "${BLUE}%s${NORMAL}\n" "Updating Oh My Zsh"
 cd "$ZSH"
 originok=0
-if git pull --ff-only origin master; then
+if git fetch origin && git reset --hard origin/master; then
     originok=1
     echo "Successful pull."
 fi
